@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{408B009D-02E4-4826-B192-97D2F1983B43}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>SG_PDF2TXT</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>SG_PDF2TXT</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)xpdf\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(VCToolsInstallDir)\lib\$(PlatformShortName);$(VCToolsInstallDir)atlmfc\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)xpdf\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(VCToolsInstallDir)\lib\$(PlatformShortName);$(VCToolsInstallDir)atlmfc\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)xpdf\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(VCToolsInstallDir)\lib\$(PlatformShortName);$(VCToolsInstallDir)atlmfc\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)xpdf\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(VCToolsInstallDir)\lib\$(PlatformShortName);$(VCToolsInstallDir)atlmfc\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\xpdf\aconf.h" />
+    <ClInclude Include="..\xpdf\aconf2.h" />
+    <ClInclude Include="..\xpdf\AcroForm.h" />
+    <ClInclude Include="..\xpdf\Annot.h" />
+    <ClInclude Include="..\xpdf\Array.h" />
+    <ClInclude Include="..\xpdf\BuiltinFont.h" />
+    <ClInclude Include="..\xpdf\BuiltinFontTables.h" />
+    <ClInclude Include="..\xpdf\Catalog.h" />
+    <ClInclude Include="..\xpdf\CharCodeToUnicode.h" />
+    <ClInclude Include="..\xpdf\CharTypes.h" />
+    <ClInclude Include="..\xpdf\CMap.h" />
+    <ClInclude Include="..\xpdf\CompactFontTables.h" />
+    <ClInclude Include="..\xpdf\config.h" />
+    <ClInclude Include="..\xpdf\Decrypt.h" />
+    <ClInclude Include="..\xpdf\Dict.h" />
+    <ClInclude Include="..\xpdf\DisplayState.h" />
+    <ClInclude Include="..\xpdf\Error.h" />
+    <ClInclude Include="..\xpdf\ErrorCodes.h" />
+    <ClInclude Include="..\xpdf\FixedPoint.h" />
+    <ClInclude Include="..\xpdf\FoFiBase.h" />
+    <ClInclude Include="..\xpdf\FoFiEncodings.h" />
+    <ClInclude Include="..\xpdf\FoFiIdentifier.h" />
+    <ClInclude Include="..\xpdf\FoFiTrueType.h" />
+    <ClInclude Include="..\xpdf\FoFiType1.h" />
+    <ClInclude Include="..\xpdf\FoFiType1C.h" />
+    <ClInclude Include="..\xpdf\FontEncodingTables.h" />
+    <ClInclude Include="..\xpdf\Function.h" />
+    <ClInclude Include="..\xpdf\gfile.h" />
+    <ClInclude Include="..\xpdf\Gfx.h" />
+    <ClInclude Include="..\xpdf\GfxFont.h" />
+    <ClInclude Include="..\xpdf\GfxState.h" />
+    <ClInclude Include="..\xpdf\GHash.h" />
+    <ClInclude Include="..\xpdf\GList.h" />
+    <ClInclude Include="..\xpdf\GlobalParams.h" />
+    <ClInclude Include="..\xpdf\gmem.h" />
+    <ClInclude Include="..\xpdf\gmempp.h" />
+    <ClInclude Include="..\xpdf\GMutex.h" />
+    <ClInclude Include="..\xpdf\GString.h" />
+    <ClInclude Include="..\xpdf\gtypes.h" />
+    <ClInclude Include="..\xpdf\ImageOutputDev.h" />
+    <ClInclude Include="..\xpdf\JArithmeticDecoder.h" />
+    <ClInclude Include="..\xpdf\JBIG2Stream.h" />
+    <ClInclude Include="..\xpdf\JPXStream.h" />
+    <ClInclude Include="..\xpdf\Lexer.h" />
+    <ClInclude Include="..\xpdf\Link.h" />
+    <ClInclude Include="..\xpdf\NameToCharCode.h" />
+    <ClInclude Include="..\xpdf\NameToUnicodeTable.h" />
+    <ClInclude Include="..\xpdf\Object.h" />
+    <ClInclude Include="..\xpdf\OptionalContent.h" />
+    <ClInclude Include="..\xpdf\Outline.h" />
+    <ClInclude Include="..\xpdf\OutputDev.h" />
+    <ClInclude Include="..\xpdf\Page.h" />
+    <ClInclude Include="..\xpdf\parseargs.h" />
+    <ClInclude Include="..\xpdf\Parser.h" />
+    <ClInclude Include="..\xpdf\PDF417Barcode.h" />
+    <ClInclude Include="..\xpdf\PDFCore.h" />
+    <ClInclude Include="..\xpdf\PDFDoc.h" />
+    <ClInclude Include="..\xpdf\PDFDocEncoding.h" />
+    <ClInclude Include="..\xpdf\PreScanOutputDev.h" />
+    <ClInclude Include="..\xpdf\PSOutputDev.h" />
+    <ClInclude Include="..\xpdf\PSTokenizer.h" />
+    <ClInclude Include="..\xpdf\SecurityHandler.h" />
+    <ClInclude Include="..\xpdf\ShadingImage.h" />
+    <ClInclude Include="..\xpdf\Splash.h" />
+    <ClInclude Include="..\xpdf\SplashBitmap.h" />
+    <ClInclude Include="..\xpdf\SplashClip.h" />
+    <ClInclude Include="..\xpdf\SplashErrorCodes.h" />
+    <ClInclude Include="..\xpdf\SplashFont.h" />
+    <ClInclude Include="..\xpdf\SplashFontEngine.h" />
+    <ClInclude Include="..\xpdf\SplashFontFile.h" />
+    <ClInclude Include="..\xpdf\SplashFontFileID.h" />
+    <ClInclude Include="..\xpdf\SplashFTFont.h" />
+    <ClInclude Include="..\xpdf\SplashFTFontEngine.h" />
+    <ClInclude Include="..\xpdf\SplashFTFontFile.h" />
+    <ClInclude Include="..\xpdf\SplashGlyphBitmap.h" />
+    <ClInclude Include="..\xpdf\SplashMath.h" />
+    <ClInclude Include="..\xpdf\SplashOutputDev.h" />
+    <ClInclude Include="..\xpdf\SplashPath.h" />
+    <ClInclude Include="..\xpdf\SplashPattern.h" />
+    <ClInclude Include="..\xpdf\SplashScreen.h" />
+    <ClInclude Include="..\xpdf\SplashState.h" />
+    <ClInclude Include="..\xpdf\SplashTypes.h" />
+    <ClInclude Include="..\xpdf\SplashXPath.h" />
+    <ClInclude Include="..\xpdf\SplashXPathScanner.h" />
+    <ClInclude Include="..\xpdf\Stream-CCITT.h" />
+    <ClInclude Include="..\xpdf\Stream.h" />
+    <ClInclude Include="..\xpdf\TextOutputDev.h" />
+    <ClInclude Include="..\xpdf\TextString.h" />
+    <ClInclude Include="..\xpdf\TileCache.h" />
+    <ClInclude Include="..\xpdf\TileCompositor.h" />
+    <ClInclude Include="..\xpdf\TileMap.h" />
+    <ClInclude Include="..\xpdf\Trace.h" />
+    <ClInclude Include="..\xpdf\UnicodeMap.h" />
+    <ClInclude Include="..\xpdf\UnicodeMapTables.h" />
+    <ClInclude Include="..\xpdf\UnicodeRemapping.h" />
+    <ClInclude Include="..\xpdf\UnicodeTypeTable.h" />
+    <ClInclude Include="..\xpdf\UTF8.h" />
+    <ClInclude Include="..\xpdf\WebFont.h" />
+    <ClInclude Include="..\xpdf\XFAScanner.h" />
+    <ClInclude Include="..\xpdf\XRef.h" />
+    <ClInclude Include="..\xpdf\Zoox.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="SG_PDF2TXT.h" />
+    <ClInclude Include="SG_PDF2TXTDlg.h" />
+    <ClInclude Include="pdf2txt_proc.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\xpdf\AcroForm.cc" />
+    <ClCompile Include="..\xpdf\Annot.cc" />
+    <ClCompile Include="..\xpdf\Array.cc" />
+    <ClCompile Include="..\xpdf\BuiltinFont.cc" />
+    <ClCompile Include="..\xpdf\BuiltinFontTables.cc" />
+    <ClCompile Include="..\xpdf\Catalog.cc" />
+    <ClCompile Include="..\xpdf\CharCodeToUnicode.cc" />
+    <ClCompile Include="..\xpdf\CMap.cc" />
+    <ClCompile Include="..\xpdf\Decrypt.cc" />
+    <ClCompile Include="..\xpdf\Dict.cc" />
+    <ClCompile Include="..\xpdf\DisplayState.cc" />
+    <ClCompile Include="..\xpdf\Error.cc" />
+    <ClCompile Include="..\xpdf\FixedPoint.cc" />
+    <ClCompile Include="..\xpdf\FoFiBase.cc" />
+    <ClCompile Include="..\xpdf\FoFiEncodings.cc" />
+    <ClCompile Include="..\xpdf\FoFiIdentifier.cc" />
+    <ClCompile Include="..\xpdf\FoFiTrueType.cc" />
+    <ClCompile Include="..\xpdf\FoFiType1.cc" />
+    <ClCompile Include="..\xpdf\FoFiType1C.cc" />
+    <ClCompile Include="..\xpdf\FontEncodingTables.cc" />
+    <ClCompile Include="..\xpdf\Function.cc" />
+    <ClCompile Include="..\xpdf\gfile.cc" />
+    <ClCompile Include="..\xpdf\Gfx.cc" />
+    <ClCompile Include="..\xpdf\GfxFont.cc" />
+    <ClCompile Include="..\xpdf\GfxState.cc" />
+    <ClCompile Include="..\xpdf\GHash.cc" />
+    <ClCompile Include="..\xpdf\GList.cc" />
+    <ClCompile Include="..\xpdf\GlobalParams.cc" />
+    <ClCompile Include="..\xpdf\gmem.cc" />
+    <ClCompile Include="..\xpdf\gmempp.cc" />
+    <ClCompile Include="..\xpdf\GString.cc" />
+    <ClCompile Include="..\xpdf\ImageOutputDev.cc" />
+    <ClCompile Include="..\xpdf\JArithmeticDecoder.cc" />
+    <ClCompile Include="..\xpdf\JBIG2Stream.cc" />
+    <ClCompile Include="..\xpdf\JPXStream.cc" />
+    <ClCompile Include="..\xpdf\Lexer.cc" />
+    <ClCompile Include="..\xpdf\Link.cc" />
+    <ClCompile Include="..\xpdf\NameToCharCode.cc" />
+    <ClCompile Include="..\xpdf\Object.cc" />
+    <ClCompile Include="..\xpdf\OptionalContent.cc" />
+    <ClCompile Include="..\xpdf\Outline.cc" />
+    <ClCompile Include="..\xpdf\OutputDev.cc" />
+    <ClCompile Include="..\xpdf\Page.cc" />
+    <ClCompile Include="..\xpdf\parseargs.c" />
+    <ClCompile Include="..\xpdf\Parser.cc" />
+    <ClCompile Include="..\xpdf\PDF417Barcode.cc" />
+    <ClCompile Include="..\xpdf\PDFCore.cc" />
+    <ClCompile Include="..\xpdf\PDFDoc.cc" />
+    <ClCompile Include="..\xpdf\PDFDocEncoding.cc" />
+    <ClCompile Include="..\xpdf\PreScanOutputDev.cc" />
+    <ClCompile Include="..\xpdf\PSOutputDev.cc" />
+    <ClCompile Include="..\xpdf\PSTokenizer.cc" />
+    <ClCompile Include="..\xpdf\SecurityHandler.cc" />
+    <ClCompile Include="..\xpdf\ShadingImage.cc" />
+    <ClCompile Include="..\xpdf\Splash.cc" />
+    <ClCompile Include="..\xpdf\SplashBitmap.cc" />
+    <ClCompile Include="..\xpdf\SplashClip.cc" />
+    <ClCompile Include="..\xpdf\SplashFont.cc" />
+    <ClCompile Include="..\xpdf\SplashFontEngine.cc" />
+    <ClCompile Include="..\xpdf\SplashFontFile.cc" />
+    <ClCompile Include="..\xpdf\SplashFontFileID.cc" />
+    <ClCompile Include="..\xpdf\SplashFTFont.cc" />
+    <ClCompile Include="..\xpdf\SplashFTFontEngine.cc" />
+    <ClCompile Include="..\xpdf\SplashFTFontFile.cc" />
+    <ClCompile Include="..\xpdf\SplashOutputDev.cc" />
+    <ClCompile Include="..\xpdf\SplashPath.cc" />
+    <ClCompile Include="..\xpdf\SplashPattern.cc" />
+    <ClCompile Include="..\xpdf\SplashScreen.cc" />
+    <ClCompile Include="..\xpdf\SplashState.cc" />
+    <ClCompile Include="..\xpdf\SplashXPath.cc" />
+    <ClCompile Include="..\xpdf\SplashXPathScanner.cc" />
+    <ClCompile Include="..\xpdf\Stream.cc" />
+    <ClCompile Include="..\xpdf\TextOutputDev.cc" />
+    <ClCompile Include="..\xpdf\TextString.cc" />
+    <ClCompile Include="..\xpdf\TileCache.cc" />
+    <ClCompile Include="..\xpdf\TileCompositor.cc" />
+    <ClCompile Include="..\xpdf\TileMap.cc" />
+    <ClCompile Include="..\xpdf\Trace.cc" />
+    <ClCompile Include="..\xpdf\UnicodeMap.cc" />
+    <ClCompile Include="..\xpdf\UnicodeRemapping.cc" />
+    <ClCompile Include="..\xpdf\UnicodeTypeTable.cc" />
+    <ClCompile Include="..\xpdf\UTF8.cc" />
+    <ClCompile Include="..\xpdf\WebFont.cc" />
+    <ClCompile Include="..\xpdf\XFAScanner.cc" />
+    <ClCompile Include="..\xpdf\XRef.cc" />
+    <ClCompile Include="..\xpdf\Zoox.cc" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SG_PDF2TXT.cpp" />
+    <ClCompile Include="SG_PDF2TXTDlg.cpp" />
+    <ClCompile Include="SG_PDF2TXT_proc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SG_PDF2TXT.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SG_PDF2TXT.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\SG_PDF2TXT.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
